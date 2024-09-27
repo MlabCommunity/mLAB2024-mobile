@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/common/widgets/errors/error_snackbar.dart';
 import '../../../../core/common/widgets/info_snackbar.dart';
+import '../../../../core/common/widgets/new_question/add_new_question_dialog.dart';
 import '../../../../core/common/widgets/question_box.dart';
 import '../../../../core/common/widgets/quiz_status_badge.dart';
 import '../../../../core/common/widgets/spacers/horizontal_spacers.dart';
@@ -106,7 +107,7 @@ class NewQuestionButton extends ConsumerWidget {
           alignment: Alignment.centerRight,
           child: ElevatedButton(
             onPressed: () {
-              AddNewQuestionBottomSheet.show(
+              AddNewQuestionDialog.show(
                 context,
                 onQuestionAdd: (question) async {
                   final newQuestionModel = NewQuestionModel(title: question.title, createAnswers: question.answers, quizID: quizDetails.id);
